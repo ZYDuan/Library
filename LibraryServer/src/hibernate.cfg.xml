@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<!-- 在hibernate核心配置文件中配置 -->
+		<!-- <property name="hiebrnate.current_session_context_class">thread</property> -->
+		
+		<!-- 映射文件 -->
+		
+		<mapping resource="com/zyd/entity/Floor.hbm.xml"/>
+		<mapping resource="com/zyd/entity/Seat.hbm.xml"/>
+		<mapping resource="com/zyd/entity/Student.hbm.xml"/>
+		<mapping resource="com/zyd/entity/Sit.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

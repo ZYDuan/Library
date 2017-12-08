@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-9 23:29:40 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zyd.entity.Sit" table="SIT">
+        <id name="SitId" type="java.lang.Integer">
+            <column name="SITID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="seat" class="com.zyd.entity.Seat" fetch="join">
+            <column name="SeatSID" />
+        </many-to-one>
+        <many-to-one name="student" class="com.zyd.entity.Student" fetch="join">
+            <column name="StuSID" />
+        </many-to-one>
+        <property name="time" type="java.util.Date">
+            <column name="TIME" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-9 23:29:40 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zyd.entity.Student" table="STUDENT">
+        <id name="Id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="StuentName" type="java.lang.String">
+            <column name="STUENTNAME" />
+        </property>
+        <property name="StudentId" type="java.lang.String">
+            <column name="STUDENTID" />
+        </property>
+        <property name="institute" type="java.lang.String">
+            <column name="INSTITUTE" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <set name="sits" table="SIT" >
+            <key>
+                <column name="StuSID" />
+            </key>
+            <one-to-many class="com.zyd.entity.Sit" />
+        </set>
+    </class>
+</hibernate-mapping>

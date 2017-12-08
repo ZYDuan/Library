@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-9 23:29:40 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.zyd.entity.Seat" table="SEAT">
+        <id name="Sid" type="java.lang.Integer">
+            <column name="SID" />
+            <generator class="native" />
+        </id>
+        <property name="row" type="int">
+            <column name="ROWS" />
+        </property>
+        <property name="column" type="int">
+            <column name="COL" />
+        </property>
+        <property name="priority" type="int">
+            <column name="PRIORITY" />
+        </property>
+        <property name="isFull" type="int">
+            <column name="ISFULL" />
+        </property>
+        <many-to-one name="floor" class="com.zyd.entity.Floor" fetch="join">
+            <column name="FSID" />
+        </many-to-one>
+        <set name="sits" table="SIT" >
+            <key>
+                <column name="SeatSID" />
+            </key>
+            <one-to-many class="com.zyd.entity.Sit" />
+        </set>
+    </class>
+</hibernate-mapping>

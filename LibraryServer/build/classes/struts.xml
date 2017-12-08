@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 设置上传文件大小 -->
+	<constant name="struts.multipart.maxSize" value="209715200"></constant>
+	
+	<package  name="demo1" extends="struts-default" namespace="/">
+    		<action name="add_*" class="addAction" method="{1}">
+			<result name="add">/login.jsp</result>
+		</action>
+		
+		
+	</package>
+</struts>
